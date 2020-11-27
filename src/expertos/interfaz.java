@@ -81,7 +81,7 @@ public class interfaz extends javax.swing.JFrame {
 
         jlabel_recomendar.setBackground(new java.awt.Color(0, 0, 153));
         jlabel_recomendar.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jlabel_recomendar.setForeground(new java.awt.Color(255, 255, 255));
+        jlabel_recomendar.setForeground(new java.awt.Color(51, 0, 51));
         jlabel_recomendar.setText("RECOMIENDAME");
         jlabel_recomendar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
