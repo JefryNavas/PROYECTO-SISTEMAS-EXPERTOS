@@ -154,7 +154,10 @@ public class interfaz extends javax.swing.JFrame {
         try {
             String msj = fv.getFactSlot("mensaje").toString();
             JOptionPane.showMessageDialog(null, msj);
-            
+            jcb_casos.setSelectedIndex(0);
+            jcb_tipor.setSelectedIndex(0);
+            jcb_zona.setSelectedIndex(0);
+            jcb_numper.setSelectedIndex(0);
             clips.reset();
         } catch (Exception e) {
             
