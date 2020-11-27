@@ -11,7 +11,7 @@ import net.sf.clipsrules.jni.MultifieldValue;
 public class interfaz extends javax.swing.JFrame {
     
     private final Environment clips;
-    ImageIcon icon1 = new javax.swing.ImageIcon(getClass().getResource("/img/icono.png"));
+    ImageIcon icon1 = new javax.swing.ImageIcon(getClass().getResource("/img/mensaje.png"));
     
     public interfaz() {
         
