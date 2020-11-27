@@ -88,13 +88,13 @@ public class interfaz extends javax.swing.JFrame {
                 jlabel_recomendarActionPerformed(evt);
             }
         });
-        getContentPane().add(jlabel_recomendar, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 270, -1, -1));
+        getContentPane().add(jlabel_recomendar, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 270, -1, -1));
 
         jlabel_titulo.setBackground(new java.awt.Color(255, 255, 255));
         jlabel_titulo.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jlabel_titulo.setForeground(new java.awt.Color(255, 51, 51));
-        jlabel_titulo.setText("Recomendacion de Software");
-        getContentPane().add(jlabel_titulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 10, 260, 40));
+        jlabel_titulo.setText("Probabilidad de Contagio en una reunión");
+        getContentPane().add(jlabel_titulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 10, 390, 40));
 
         jl_recomendacion.setBackground(new java.awt.Color(51, 51, 255));
         jl_recomendacion.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
