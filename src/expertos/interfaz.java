@@ -3,6 +3,7 @@ package expertos;
 
 
 import javax.swing.ImageIcon;
+import javax.swing.JOptionPane;
 import net.sf.clipsrules.jni.Environment;
 import net.sf.clipsrules.jni.FactAddressValue;
 import net.sf.clipsrules.jni.MultifieldValue;
@@ -106,7 +107,7 @@ public class interfaz extends javax.swing.JFrame {
         jl_recomendacion.setBackground(new java.awt.Color(51, 51, 255));
         jl_recomendacion.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jl_recomendacion.setForeground(new java.awt.Color(255, 255, 255));
-        jl_recomendacion.setBorder(javax.swing.BorderFactory.createLineBorder(null));
+        jl_recomendacion.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         getContentPane().add(jl_recomendacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 460, 390, 29));
 
         jLabel_casos.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
@@ -117,7 +118,7 @@ public class interfaz extends javax.swing.JFrame {
         jcb_casos.setBackground(new java.awt.Color(0, 0, 102));
         jcb_casos.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jcb_casos.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione una opción", "Si", "No" }));
-        getContentPane().add(jcb_casos, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 280, 160, 30));
+        getContentPane().add(jcb_casos, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 280, 160, 30));
 
         jlabel_fondo.setBackground(new java.awt.Color(255, 255, 255));
         jlabel_fondo.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
@@ -143,10 +144,14 @@ public class interfaz extends javax.swing.JFrame {
         numper=jcb_numper.getSelectedItem().toString().toLowerCase();
         tipor=jcb_tipor.getSelectedItem().toString().toLowerCase();
         casos=jcb_casos.getSelectedItem().toString().toLowerCase();
-
-        hecho = "(assert (peligro_reunion(zona " + zona + ")(num_personas " + numper +")(tipo_de_reunion " + tipor + ")(familia_cont " + casos + ")))";
         
-              
+        if((zona.equalsIgnoreCase("Seleccione una opción"))||(numper.equalsIgnoreCase("Seleccione una opción"))||(tipor.equalsIgnoreCase("Seleccione una opción"))||(casos.equalsIgnoreCase("Seleccione una opción"))){
+            
+            JOptionPane.showMessageDialog(null, "Complete todos los campos", "Incompleto", JOptionPane.WARNING_MESSAGE);
+            clear(zona,numper,tipor,casos);
+        
+        }else{
+         hecho = "(assert (peligro_reunion(zona " + zona + ")(num_personas " + numper +")(tipo_de_reunion " + tipor + ")(familia_cont " + casos + ")))";    
         clips.eval(hecho);
         clips.run();        
         String evaluador = "(find-all-facts ((?m probabilidad)) TRUE)";
@@ -160,6 +165,10 @@ public class interfaz extends javax.swing.JFrame {
         } catch (Exception e) {
             
         }
+            
+        }
+
+
     }//GEN-LAST:event_jlabel_recomendarActionPerformed
 
     private void jcb_zonaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jcb_zonaActionPerformed
@@ -186,6 +195,12 @@ public class interfaz extends javax.swing.JFrame {
         
     }
     
+    public void clear(String zona, String numper, String tipo, String casos){
+            zona = "";
+            numper="";
+            tipo="";
+            casos="";
+    }
   
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
