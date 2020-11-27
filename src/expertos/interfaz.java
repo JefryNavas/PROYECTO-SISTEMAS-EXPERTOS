@@ -138,7 +138,7 @@ public class interfaz extends javax.swing.JFrame {
         tipor=jcb_tipor.getSelectedItem().toString().toLowerCase().replace(" ","_");
         casos=jcb_casos.getSelectedItem().toString().toLowerCase().replace(" ","_");
         
-        if((zona.equalsIgnoreCase("Seleccione una opción"))||(numper.equalsIgnoreCase("Seleccione una opción"))||(tipor.equalsIgnoreCase("Seleccione una opción"))||(casos.equalsIgnoreCase("Seleccione una opción"))){
+        if((zona.equalsIgnoreCase("Seleccione_una_opción"))||(numper.equalsIgnoreCase("Seleccione_una_opción"))||(tipor.equalsIgnoreCase("Seleccione_una_opción"))||(casos.equalsIgnoreCase("Seleccione_una_opción"))){
             
             JOptionPane.showMessageDialog(null, "Complete todos los campos", "Incompleto", JOptionPane.WARNING_MESSAGE);
             clear(zona,numper,tipor,casos);
