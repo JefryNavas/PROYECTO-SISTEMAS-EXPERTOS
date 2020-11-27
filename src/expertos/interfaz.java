@@ -11,7 +11,8 @@ import net.sf.clipsrules.jni.MultifieldValue;
 public class interfaz extends javax.swing.JFrame {
     
     private final Environment clips;
-
+    ImageIcon icon1 = new javax.swing.ImageIcon(getClass().getResource("/img/icono.png"));
+    
     public interfaz() {
         
        initComponents();
@@ -153,7 +154,8 @@ public class interfaz extends javax.swing.JFrame {
         
         try {
             String msj = fv.getFactSlot("mensaje").toString();
-            JOptionPane.showMessageDialog(null, msj);
+            JOptionPane.showMessageDialog(null, msj,"PELIGRO DE CONTAGIO",JOptionPane.INFORMATION_MESSAGE,icon1);
+
             jcb_casos.setSelectedIndex(0);
             jcb_tipor.setSelectedIndex(0);
             jcb_zona.setSelectedIndex(0);
