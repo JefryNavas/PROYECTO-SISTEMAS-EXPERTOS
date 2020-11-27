@@ -27,9 +27,9 @@ public class interfaz extends javax.swing.JFrame {
 
         jlabel_numero = new javax.swing.JLabel();
         jlabel_lugar = new javax.swing.JLabel();
-        jcb_tipo = new javax.swing.JComboBox<>();
-        jcb_licencia = new javax.swing.JComboBox<>();
-        jcb_so = new javax.swing.JComboBox<>();
+        jcb_zona = new javax.swing.JComboBox<>();
+        jcb_numper = new javax.swing.JComboBox<>();
+        jcb_tipor = new javax.swing.JComboBox<>();
         jlabel_tipo = new javax.swing.JLabel();
         jlabel_recomendar = new javax.swing.JButton();
         jlabel_titulo = new javax.swing.JLabel();
@@ -58,23 +58,23 @@ public class interfaz extends javax.swing.JFrame {
         jlabel_lugar.setText("Tipo de Lugar :");
         getContentPane().add(jlabel_lugar, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 60, 140, -1));
 
-        jcb_tipo.setBackground(new java.awt.Color(0, 0, 102));
-        jcb_tipo.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        jcb_tipo.setForeground(new java.awt.Color(255, 255, 255));
-        jcb_tipo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione una opción", "zona_abierta", "zona_cerrada" }));
-        getContentPane().add(jcb_tipo, new org.netbeans.lib.awtextra.AbsoluteConstraints(245, 54, 160, -1));
+        jcb_zona.setBackground(new java.awt.Color(0, 0, 102));
+        jcb_zona.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jcb_zona.setForeground(new java.awt.Color(255, 255, 255));
+        jcb_zona.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione una opción", "zona_abierta", "zona_cerrada" }));
+        getContentPane().add(jcb_zona, new org.netbeans.lib.awtextra.AbsoluteConstraints(245, 54, 160, -1));
 
-        jcb_licencia.setBackground(new java.awt.Color(0, 0, 153));
-        jcb_licencia.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        jcb_licencia.setForeground(new java.awt.Color(255, 255, 255));
-        jcb_licencia.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione una opción", "1_10_personas", "11_20_personas", "mas_20_personas" }));
-        getContentPane().add(jcb_licencia, new org.netbeans.lib.awtextra.AbsoluteConstraints(245, 117, 160, -1));
+        jcb_numper.setBackground(new java.awt.Color(0, 0, 153));
+        jcb_numper.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jcb_numper.setForeground(new java.awt.Color(255, 255, 255));
+        jcb_numper.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione una opción", "1_10_personas", "11_20_personas", "mas_20_personas" }));
+        getContentPane().add(jcb_numper, new org.netbeans.lib.awtextra.AbsoluteConstraints(245, 117, 160, -1));
 
-        jcb_so.setBackground(new java.awt.Color(0, 0, 102));
-        jcb_so.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        jcb_so.setForeground(new java.awt.Color(255, 255, 255));
-        jcb_so.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione una opción", "familiar", "laboral", "amigos", "de_desconocidos" }));
-        getContentPane().add(jcb_so, new org.netbeans.lib.awtextra.AbsoluteConstraints(245, 171, 160, -1));
+        jcb_tipor.setBackground(new java.awt.Color(0, 0, 102));
+        jcb_tipor.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jcb_tipor.setForeground(new java.awt.Color(255, 255, 255));
+        jcb_tipor.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione una opción", "familiar", "laboral", "amigos", "de_desconocidos" }));
+        getContentPane().add(jcb_tipor, new org.netbeans.lib.awtextra.AbsoluteConstraints(245, 171, 160, -1));
 
         jlabel_tipo.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jlabel_tipo.setForeground(new java.awt.Color(51, 0, 51));
@@ -130,20 +130,21 @@ public class interfaz extends javax.swing.JFrame {
     
     private void jlabel_recomendarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jlabel_recomendarActionPerformed
         // TODO add your handling code here:
-        String hecho,tipo,licencia,so,licencia2 = "";
-        tipo=jcb_tipo.getSelectedItem().toString().toLowerCase();
-        licencia=jcb_licencia.getSelectedItem().toString();
-        so=jcb_so.getSelectedItem().toString().toLowerCase();
-        if (licencia.equals("GNU")) {
-            licencia2=licencia;
-        }
-        if (licencia.equals("Privativo")) {
-            licencia2=licencia.toLowerCase();
-        }
-        hecho = "(assert (lenguaje-programacion(tipo " + tipo + ")(licencia " + licencia2 +")(so " + so + ")))";
+        
+        
+        String zona,numper,tipor,casos,hecho = "";
+        
+        zona=jcb_zona.getSelectedItem().toString().toLowerCase();
+        numper=jcb_numper.getSelectedItem().toString().toLowerCase();
+        tipor=jcb_tipor.getSelectedItem().toString().toLowerCase();
+        casos=jcb_casos.getSelectedItem().toString().toLowerCase();
+
+        hecho = "(assert (peligro_reunion(zona " + zona + ")(num_personas " + numper +")(tipo_de_reunion " + tipor + ")(familia_cont " + casos + ")))";
+        
+              
         clips.eval(hecho);
         clips.run();        
-        String evaluador = "(find-all-facts ((?m recomendacion)) TRUE)";
+        String evaluador = "(find-all-facts ((?m probabilidad)) TRUE)";
         
         FactAddressValue fv = (FactAddressValue) ((MultifieldValue) clips.eval(evaluador)).get(0);
         
@@ -181,9 +182,9 @@ public class interfaz extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel_casos;
     private javax.swing.JComboBox<String> jcb_casos;
-    private javax.swing.JComboBox<String> jcb_licencia;
-    private javax.swing.JComboBox<String> jcb_so;
-    public javax.swing.JComboBox<String> jcb_tipo;
+    private javax.swing.JComboBox<String> jcb_numper;
+    private javax.swing.JComboBox<String> jcb_tipor;
+    public javax.swing.JComboBox<String> jcb_zona;
     private javax.swing.JLabel jl_recomendacion;
     private javax.swing.JLabel jlabel_fondo;
     private javax.swing.JLabel jlabel_lugar;
