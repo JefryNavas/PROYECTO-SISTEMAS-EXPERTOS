@@ -96,7 +96,7 @@ public class interfaz extends javax.swing.JFrame {
                 jlabel_recomendarActionPerformed(evt);
             }
         });
-        getContentPane().add(jlabel_recomendar, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 370, -1, -1));
+        getContentPane().add(jlabel_recomendar, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 300, -1, -1));
 
         jlabel_titulo.setBackground(new java.awt.Color(255, 255, 255));
         jlabel_titulo.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
@@ -112,7 +112,7 @@ public class interfaz extends javax.swing.JFrame {
         jcb_casos.setBackground(new java.awt.Color(0, 0, 102));
         jcb_casos.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jcb_casos.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione una opción", "Si", "No" }));
-        getContentPane().add(jcb_casos, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 280, 160, 30));
+        getContentPane().add(jcb_casos, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 300, 160, 30));
 
         jlabel_fondo.setBackground(new java.awt.Color(255, 255, 255));
         jlabel_fondo.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
