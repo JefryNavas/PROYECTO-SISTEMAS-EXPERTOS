@@ -72,7 +72,7 @@ public class interfaz extends javax.swing.JFrame {
         jcb_numper.setBackground(new java.awt.Color(0, 0, 153));
         jcb_numper.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jcb_numper.setForeground(new java.awt.Color(255, 255, 255));
-        jcb_numper.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione una opción", "1_10_Personas", "11_20_Personas", "mas_20_Personas" }));
+        jcb_numper.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione una opción", "1_10_Personas", "11_20_Personas", "Mas_20_Personas" }));
         getContentPane().add(jcb_numper, new org.netbeans.lib.awtextra.AbsoluteConstraints(245, 117, 160, -1));
 
         jcb_tipor.setBackground(new java.awt.Color(0, 0, 102));
@@ -106,7 +106,7 @@ public class interfaz extends javax.swing.JFrame {
         jl_recomendacion.setBackground(new java.awt.Color(51, 51, 255));
         jl_recomendacion.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jl_recomendacion.setForeground(new java.awt.Color(255, 255, 255));
-        jl_recomendacion.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jl_recomendacion.setBorder(javax.swing.BorderFactory.createLineBorder(null));
         getContentPane().add(jl_recomendacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 460, 390, 29));
 
         jLabel_casos.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N

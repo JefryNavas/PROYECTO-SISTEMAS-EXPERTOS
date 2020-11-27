@@ -122,7 +122,7 @@
             <StringItem index="0" value="Seleccione una opci&#xf3;n"/>
             <StringItem index="1" value="1_10_Personas"/>
             <StringItem index="2" value="11_20_Personas"/>
-            <StringItem index="3" value="mas_20_Personas"/>
+            <StringItem index="3" value="Mas_20_Personas"/>
           </StringArray>
         </Property>
       </Properties>
