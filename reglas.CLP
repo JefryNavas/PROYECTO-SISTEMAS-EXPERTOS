@@ -1,235 +1,41 @@
 
 
-;;Definimos el template que recibira la informacion para  identificar un lenguaje de programación para resolver un problema 
-(deftemplate lenguaje-programacion 
-		(slot tipo)
-		(slot licencia)
-		(slot so))
+;;Definimos el template que recibira la informacion para  identificar los parametros que mediran el peligro que enfrentará el usuario en una reunión
+(deftemplate peligro_reunion 
+		(slot zona)
+		(slot num_personas)
+		(slot tipo_personas)		(slot familia_cont))
 	
-;;DEfinimos el template que guardara el mensaje de salida
-(deftemplate recomendacion
+;;Se define el template que guardara el mensaje de salida
+(deftemplate probabilidad
 		(slot mensaje))
 
-;;Definimos las reglas para el opcion1
-(defrule opcion1-0
-	(lenguaje-programacion
-		(tipo software_matematico)
-		(licencia privativo)
-		(so linux))
-	=> 	(printout t crlf "Se te recomienda la utilizacion de Matlab." crlf crlf)
-		(assert (recomendacion (mensaje "Se te recomienda la utilizacion de Matlab. ")))	
+;;Se definen las 48 reglas divididas en 4 preguntas, mostrando la opcion por número según lo que se esté trabajando. ;;El primer número representa la zona 1(abierta)  2 (cerrada);;El segundo número representa el número de personas en la reunión 1(1-10 personas)  2 (11-20 personas)  3(+20 personas);;El tercer número representa el tipo de personas con las que se tendrá la reunión 1(familiar)  2(trabajo) 3(amigos) 4(desconocidos);;El cuarto número representa si el anfitrión de la fiesta tiene /tuvo familiares contagiados  1(sí)  2 (no)
+(defrule opcion1-1-1-1
+	(peligro_reunion
+		(zona zona_abierta)
+		(num_personas 1_10_personas)
+		(tipo_personas familiar)		(familia_cont si))
+	=> 	(printout t crlf "El peligro de contagio es de 0.4 (Medio)" crlf crlf)
+		(assert (probabilidad (mensaje "El peligro de contagio es de 0.4 (Medio)")))	
 )
 
-(defrule opcion1-1
-	(lenguaje-programacion
-		(tipo software_matematico)
-		(licencia privativo)
-		(so windows))
-	=> 	(printout t crlf "Se te recomienda la utilizacion de Matlab" crlf crlf)
-		(assert (recomendacion (mensaje "Se te recomienda la utilizacion de Matlab ")))
+(defrule opcion1-1-1-2
+	(peligro_reunion		(zona zona_abierta)		(num_personas 1_10_personas)		(tipo_personas familiar)		(familia_cont no))	=> 	(printout t crlf "El peligro de contagio es de 0.25 (Bajo)" crlf crlf)		(assert (probabilidad (mensaje "El peligro de contagio es de 0.25 (Bajo)")))
 )
 
-(defrule opcion1-2
-	(lenguaje-programacion
-		(tipo software_matematico)
-		(licencia GNU)
-		(so windows))
-	=> 	(printout t crlf "Se te recomienda la utilizacion de Octave" crlf crlf)
-		(assert (recomendacion (mensaje "Se te recomienda la utilizacion de Matlab ")))
-)
+(defrule opcion1-1-2-1	(peligro_reunion		(zona zona_abierta)		(num_personas 1_10_personas)		(tipo_personas trabajo)		(familia_cont si))	=> 	(printout t crlf "El peligro de contagio es de 0.33 (Medio)" crlf crlf)		(assert (probabilidad (mensaje "El peligro de contagio es de 0.33 (Medio)"))))
 
-(defrule opcion1-3
-	(lenguaje-programacion
-		(tipo software_matematico)
-		(licencia GNU)
-		(so linux))
-	=> 	(printout t crlf "Se te recomienda la utilizacion de Octave" crlf crlf)
-		(assert (recomendacion (mensaje "Se te recomienda la utilizacion de Matlab ")))
-)
+(defrule opcion1-1-2-2	(peligro_reunion		(zona zona_abierta)		(num_personas 1_10_personas)		(tipo_personas trabajo)		(familia_cont no))	=> 	(printout t crlf "El peligro de contagio es de 0.18 (Bajo)" crlf crlf)		(assert (probabilidad (mensaje "El peligro de contagio es de 0.18 (Bajo)"))))
 
 
-;;Definimos las reglas para el opcion2
-(defrule opcion2-0
-	(lenguaje-programacion
-		(tipo arquitectura)
-		(licencia privativo)
-		(so windows))
-	=> 	(printout t crlf "Se te recomienda la utilizacion de Autocad " crlf crlf)
-		(assert (recomendacion (mensaje "Se te recomienda la utilizacion de Autocad ")))
-)
+(defrule opcion1-1-3-1	(peligro_reunion		(zona zona_abierta)		(num_personas 1_10_personas)		(tipo_personas amigos)		(familia_cont si))	=> 	(printout t crlf "El peligro de contagio es de 0.39 (Medio)" crlf crlf)		(assert (probabilidad (mensaje "El peligro de contagio es de 0.39 (Medio)"))))
 
-(defrule opcion2-1
-	(lenguaje-programacion
-		(tipo arquitectura)
-		(licencia privativo)
-		(so linux))
-	=> 	(printout t crlf "Se te recomienda la utilizacion de DraftSight " crlf crlf)
-		(assert (recomendacion (mensaje "Se te recomienda la utilizacion de DraftSight ")))
-)
+(defrule opcion1-1-3-2	(peligro_reunion		(zona zona_abierta)		(num_personas 1_10_personas)		(tipo_personas amigos)		(familia_cont no))	=> 	(printout t crlf "El peligro de contagio es de 0.24 (Bajo)" crlf crlf)		(assert (probabilidad (mensaje "El peligro de contagio es de 0.24 (Bajo)"))))
 
-(defrule opcion2-2
-	(lenguaje-programacion
-		(tipo arquitectura)
-		(licencia GNU)
-		(so windows))
-	=> 	(printout t crlf "Se te recomienda la utilizacion de Freecad " crlf crlf)
-		(assert (recomendacion (mensaje "Se te recomienda la utilizacion de Freecad ")))
-)
+(defrule opcion1-1-4-1	(peligro_reunion		(zona zona_abierta)		(num_personas 1_10_personas)		(tipo_personas desconocidos)		(familia_cont si))	=> 	(printout t crlf "El peligro de contagio es de 0.41 (Medio)" crlf crlf)		(assert (probabilidad (mensaje "El peligro de contagio es de 0.41 (Medio)"))))(defrule opcion1-1-4-2	(peligro_reunion		(zona zona_abierta)		(num_personas 1_10_personas)		(tipo_personas desconocidos)		(familia_cont no))	=> 	(printout t crlf "El peligro de contagio es de 0.26 (Bajo)" crlf crlf)		(assert (probabilidad (mensaje "El peligro de contagio es de 0.26 (Bajo)"))))(defrule opcion1-2-1-1	(peligro_reunion		(zona zona_abierta)		(num_personas 11_20_personas)		(tipo_personas familiar)		(familia_cont si))	=> 	(printout t crlf "El peligro de contagio es de 0.44 (Medio)" crlf crlf)		(assert (probabilidad (mensaje "El peligro de contagio es de 0.44 (Medio)")))	)(defrule opcion1-2-1-2	(peligro_reunion		(zona zona_abierta)		(num_personas 11_20_personas)		(tipo_personas familiar)		(familia_cont no))	=> 	(printout t crlf "El peligro de contagio es de 0.29 (Bajo)" crlf crlf)		(assert (probabilidad (mensaje "El peligro de contagio es de 0.29 (Bajo)"))))(defrule opcion1-2-2-1	(peligro_reunion		(zona zona_abierta)		(num_personas 11_20_personas)		(tipo_personas trabajo)		(familia_cont si))	=> 	(printout t crlf "El peligro de contagio es de 0.37 (Medio)" crlf crlf)		(assert (probabilidad (mensaje "El peligro de contagio es de 0.37 (Medio)"))))(defrule opcion1-2-2-2	(peligro_reunion		(zona zona_abierta)		(num_personas 11_20_personas)		(tipo_personas trabajo)		(familia_cont no))	=> 	(printout t crlf "El peligro de contagio es de 0.22 (Bajo)" crlf crlf)		(assert (probabilidad (mensaje "El peligro de contagio es de 0.22 (Bajo)"))))(defrule opcion1-2-3-1	(peligro_reunion		(zona zona_abierta)		(num_personas 11_20_personas)		(tipo_personas amigos)		(familia_cont si))	=> 	(printout t crlf "El peligro de contagio es de 0.4 (Medio)" crlf crlf)		(assert (probabilidad (mensaje "El peligro de contagio es de 0.4 (Medio)")))	)defrule opcion1-2-3-2	(peligro_reunion		(zona zona_abierta)		(num_personas 11_20_personas)		(tipo_personas amigos)		(familia_cont no))	=> 	(printout t crlf "El peligro de contagio es de 0.27 (Medio)" crlf crlf)		(assert (probabilidad (mensaje "El peligro de contagio es de 0.27 (Medio)")))	)defrule opcion1-2-4-1	(peligro_reunion		(zona zona_abierta)		(num_personas 11_20_personas)		(tipo_personas desconocidos)		(familia_cont si))	=> 	(printout t crlf "El peligro de contagio es de 0.45 (Medio)" crlf crlf)		(assert (probabilidad (mensaje "El peligro de contagio es de 0.45 (Medio)")))	)defrule opcion1-2-4-2	(peligro_reunion		(zona zona_abierta)		(num_personas 11_20_personas)		(tipo_personas desconocidos)		(familia_cont no))	=> 	(printout t crlf "El peligro de contagio es de 0.3 (Medio)" crlf crlf)		(assert (probabilidad (mensaje "El peligro de contagio es de 0.3 (Medio)")))	)defrule opcion1-3-1-1	(peligro_reunion		(zona zona_abierta)		(num_personas mas_20_personas)		(tipo_personas familiar)		(familia_cont si))	=> 	(printout t crlf "El peligro de contagio es de 0.53 (Alto)" crlf crlf)		(assert (probabilidad (mensaje "El peligro de contagio es de 0.53 (Alto)")))	)defrule opcion1-3-1-2	(peligro_reunion		(zona zona_abierta)		(num_personas mas_20_personas)		(tipo_personas familiar)		(familia_cont no))	=> 	(printout t crlf "El peligro de contagio es de 0.38 (Medio)" crlf crlf)		(assert (probabilidad (mensaje "El peligro de contagio es de 0.38 (Medio)")))	)defrule opcion1-3-2-1	(peligro_reunion		(zona zona_abierta)		(num_personas mas_20_personas)		(tipo_personas trabajo)		(familia_cont si))	=> 	(printout t crlf "El peligro de contagio es de 0.46 (Medio)" crlf crlf)		(assert (probabilidad (mensaje "El peligro de contagio es de 0.46 (Medio)")))	)defrule opcion1-3-2-2	(peligro_reunion		(zona zona_abierta)		(num_personas mas_20_personas)		(tipo_personas trabajo)		(familia_cont no))	=> 	(printout t crlf "El peligro de contagio es de 0.31 (Medio)" crlf crlf)		(assert (probabilidad (mensaje "El peligro de contagio es de 0.31 (Medio)")))	)defrule opcion1-3-3-1	(peligro_reunion		(zona zona_abierta)		(num_personas mas_20_personas)		(tipo_personas amigos)		(familia_cont si))	=> 	(printout t crlf "El peligro de contagio es de 0.52 (Alto)" crlf crlf)		(assert (probabilidad (mensaje "El peligro de contagio es de 0.52 (Alto)")))	)defrule opcion1-3-3-2	(peligro_reunion		(zona zona_abierta)		(num_personas mas_20_personas)		(tipo_personas amigos)		(familia_cont no))	=> 	(printout t crlf "El peligro de contagio es de 0.37 (Medio)" crlf crlf)		(assert (probabilidad (mensaje "El peligro de contagio es de 0.47 (Medio)")))	)defrule opcion1-3-4-1	(peligro_reunion		(zona zona_abierta)		(num_personas mas_20_personas)		(tipo_personas desconocidos)		(familia_cont si))	=> 	(printout t crlf "El peligro de contagio es de 0.55 (Alto)" crlf crlf)		(assert (probabilidad (mensaje "El peligro de contagio es de 0.55 (Alto)")))	)defrule opcion1-3-4-2	(peligro_reunion		(zona zona_abierta)		(num_personas mas_20_personas)		(tipo_personas desconocidos)		(familia_cont no))	=> 	(printout t crlf "El peligro de contagio es de 0.4 (Medio)" crlf crlf)		(assert (probabilidad (mensaje "El peligro de contagio es de 0.4 (Medio)")))	)(defrule opcion2-1-1-1	(peligro_reunion		(zona zona_cerrada)		(num_personas 1_10_personas)		(tipo_personas familiar)		(familia_cont si))	=> 	(printout t crlf "El peligro de contagio es de 0.46 (Medio)" crlf crlf)		(assert (probabilidad (mensaje "El peligro de contagio es de 0.46 (Medio)"))))(defrule opcion2-1-1-2	(peligro_reunion		(zona zona_cerrada)		(num_personas 1_10_personas)		(tipo_personas familiar)		(familia_cont no))	=> 	(printout t crlf "El peligro de contagio es de 0.31 (Medio)" crlf crlf)		(assert (probabilidad (mensaje "El peligro de contagio es de 0.31 (Medio)"))))(defrule opcion2-1-2-1	(peligro_reunion		(zona zona_cerrada)		(num_personas 1_10_personas)		(tipo_personas trabajo)		(familia_cont si))	=> 	(printout t crlf "El peligro de contagio es de 0.39 (Medio)" crlf crlf)		(assert (probabilidad (mensaje "El peligro de contagio es de 0.39 (Medio)"))))(defrule opcion2-1-2-2	(peligro_reunion		(zona zona_cerrada)		(num_personas 1_10_personas)		(tipo_personas trabajo)		(familia_cont no))	=> 	(printout t crlf "El peligro de contagio es de 0.24 (Bajo)" crlf crlf)		(assert (probabilidad (mensaje "El peligro de contagio es de 0.24 (Bajo)"))))(defrule opcion2-1-3-1	(peligro_reunion		(zona zona_cerrada)		(num_personas 1_10_personas)		(tipo_personas amigos)		(familia_cont si))	=> 	(printout t crlf "El peligro de contagio es de 0.45 (Medio)" crlf crlf)		(assert (probabilidad (mensaje "El peligro de contagio es de 0.45 (Medio)"))))(defrule opcion2-1-3-2	(peligro_reunion		(zona zona_cerrada)		(num_personas 1_10_personas)		(tipo_personas amigos)		(familia_cont no))	=> 	(printout t crlf "El peligro de contagio es de 0.3 (Medio)" crlf crlf)		(assert (probabilidad (mensaje "El peligro de contagio es de 0.3 (Medio)"))))(defrule opcion2-1-4-1	(peligro_reunion		(zona zona_cerrada)		(num_personas 1_10_personas)		(tipo_personas desconocidos)		(familia_cont si))	=> 	(printout t crlf "El peligro de contagio es de 0.48 (Medio)" crlf crlf)		(assert (probabilidad (mensaje "El peligro de contagio es de 0.48 (Medio)"))))(defrule opcion2-1-4-2	(peligro_reunion		(zona zona_cerrada)		(num_personas 1_10_personas)		(tipo_personas desconocidos)		(familia_cont no))	=> 	(printout t crlf "El peligro de contagio es de 0.33 (Medio)" crlf crlf)		(assert (probabilidad (mensaje "El peligro de contagio es de 0.33 (Medio)"))))(defrule opcion2-2-1-1	(peligro_reunion		(zona zona_cerrada)		(num_personas 11_20_personas)		(tipo_personas familiar)		(familia_cont si))	=> 	(printout t crlf "El peligro de contagio es de 0.5 (Medio)" crlf crlf)		(assert (probabilidad (mensaje "El peligro de contagio es de 0.5 (Medio)"))))(defrule opcion2-2-1-2	(peligro_reunion		(zona zona_cerrada)		(num_personas 11_20_personas)		(tipo_personas familiar)		(familia_cont no))	=> 	(printout t crlf "El peligro de contagio es de 0.35 (Medio)" crlf crlf)		(assert (probabilidad (mensaje "El peligro de contagio es de 0.35 (Medio)"))))(defrule opcion2-2-2-1	(peligro_reunion		(zona zona_cerrada)		(num_personas 11_20_personas)		(tipo_personas trabajo)		(familia_cont si))	=> 	(printout t crlf "El peligro de contagio es de 0.43 (Medio)" crlf crlf)		(assert (probabilidad (mensaje "El peligro de contagio es de 0.43 (Medio)"))))(defrule opcion2-2-2-2	(peligro_reunion		(zona zona_cerrada)		(num_personas 11_20_personas)		(tipo_personas trabajo)		(familia_cont no))	=> 	(printout t crlf "El peligro de contagio es de 0.28 (Medio)" crlf crlf)		(assert (probabilidad (mensaje "El peligro de contagio es de 0.28 (Medio)"))))
 
-(defrule opcion2-3
-	(lenguaje-programacion
-		(tipo arquitectura)
-		(licencia GNU)
-		(so linux))
-	=> 	(printout t crlf "Se te recomienda la utilizacion de Freecad " crlf crlf)
-		(assert (recomendacion (mensaje "Se te recomienda la utilizacion de Freecad ")))
-)
-
-
-;;Definimos las reglas para el opcion3
-(defrule opcion3-0
-	(lenguaje-programacion
-		(tipo sistema_experto)
-		(licencia privativo)
-		(so windows))
-	=> 	(printout t crlf "Se te recomienda la utilizacion de Prolog " crlf crlf)
-		(assert (recomendacion (mensaje "Se te recomienda la utilizacion de Prolog ")))
-)
-
-(defrule opcion3-1
-	(lenguaje-programacion
-		(tipo sistema_experto)
-		(licencia privativo)
-		(so linux))
-	=> 	(printout t crlf "Se te recomienda la utilizacion de Prolog " crlf crlf)
-		(assert (recomendacion (mensaje "Se te recomienda la utilizacion de Prolog ")))
-)
-
-(defrule opcion3-2
-	(lenguaje-programacion
-		(tipo sistema_experto)
-		(licencia GNU)
-		(so windows))
-	=> 	(printout t crlf "Se te recomienda la utilizacion de Clips " crlf crlf)
-		(assert (recomendacion (mensaje "Se te recomienda la utilizacion de Clips ")))
-)
-
-(defrule opcion3-3
-	(lenguaje-programacion
-		(tipo sistema_experto)
-		(licencia GNU)
-		(so linux))
-	=> 	(printout t crlf "Se te recomienda la utilizacion de Clips " crlf crlf)
-		(assert (recomendacion (mensaje "Se te recomienda la utilizacion de Clips ")))
-)
-
-;;Definimos las reglas para el opcion4
-(defrule opcion4-0
-	(lenguaje-programacion
-		(tipo edicion_fotografica)
-		(licencia privativo)
-		(so windows))
-	=> 	(printout t crlf "Se te recomienda la utilizacion de Adobe Photoshop " crlf crlf)
-		(assert (recomendacion (mensaje "Se te recomienda la utilizacion de Adobe Photoshop ")))
-)
-
-(defrule opcion4-1
-	(lenguaje-programacion
-		(tipo edicion_fotografica)
-		(licencia privativo)
-		(so linux))
-	=> 	(printout t crlf "Se te recomienda la utilizacion de Adobe Photoshop " crlf crlf)
-		(assert (recomendacion (mensaje "Se te recomienda la utilizacion de Adobe Photoshop ")))
-)
-
-(defrule opcion4-2
-	(lenguaje-programacion
-		(tipo edicion_fotografica)
-		(licencia GNU)
-		(so windows))
-	=> 	(printout t crlf "Se te recomienda la utilizacion de GIMP " crlf crlf)
-		(assert (recomendacion (mensaje "Se te recomienda la utilizacion de GIMP ")))
-)
-
-(defrule opcion4-3
-	(lenguaje-programacion
-		(tipo edicion_fotografica)
-		(licencia GNU)
-		(so linux))
-	=> 	(printout t crlf "Se te recomienda la utilizacion de GIMP " crlf crlf)
-		(assert (recomendacion (mensaje "Se te recomienda la utilizacion de GIMP ")))
-)
-
-
-;;Definimos las reglas para el opcion5
-(defrule opcion5-0
-	(lenguaje-programacion
-		(tipo edicion_vectorial)
-		(licencia privativo)
-		(so windows))
-	=> 	(printout t crlf "Se te recomienda la utilizacion de Adobe Illustrator " crlf crlf)
-		(assert (recomendacion (mensaje "Se te recomienda la utilizacion de Adobe Illustrator ")))
-)
-
-(defrule opcion5-1
-	(lenguaje-programacion
-		(tipo edicion_vectorial)
-		(licencia privativo)
-		(so linux))
-	=> 	(printout t crlf "Se te recomienda la utilizacion de Adobe Illustrator " crlf crlf)
-		(assert (recomendacion (mensaje "Se te recomienda la utilizacion de Adobe Illustrator ")))
-)
-
-(defrule opcion5-2
-	(lenguaje-programacion
-		(tipo edicion_vectorial)
-		(licencia GNU)
-		(so windows))
-	=> 	(printout t crlf "Se te recomienda la utilizacion de Inkscape " crlf crlf)
-		(assert (recomendacion (mensaje "Se te recomienda la utilizacion de Inkscape ")))
-)
-
-(defrule opcion5-3
-	(lenguaje-programacion
-		(tipo edicion_vectorial)
-		(licencia GNU)
-		(so linux))
-	=> 	(printout t crlf "Se te recomienda la utilizacion de Inkscape " crlf crlf)
-		(assert (recomendacion (mensaje "Se te recomienda la utilizacion de Inkscape ")))
-)
-
-;;Definimos las reglas para el opcion6
-(defrule opcion6-0
-	(lenguaje-programacion
-		(tipo modelado_3d)
-		(licencia privativo)
-		(so windows))
-	=> 	(printout t crlf "Se te recomienda la utilizacion de Autodesk 3d MAX " crlf crlf)
-		(assert (recomendacion (mensaje "Se te recomienda la utilizacion de Autodesk 3d MAX ")))
-)
-
-(defrule opcion6-1
-	(lenguaje-programacion
-		(tipo modelado_3d)
-		(licencia privativo)
-		(so linux))
-	=> 	(printout t crlf "Se te recomienda la utilizacion de Autodesk 3d MAX " crlf crlf)
-		(assert (recomendacion (mensaje "Se te recomienda la utilizacion de Autodesk 3d MAX ")))
-)
-
-
-(defrule opcion6-2
-	(lenguaje-programacion
-		(tipo modelado_3d)
-		(licencia GNU)
-		(so windows))
-	=> 	(printout t crlf "Se te recomienda la utilizacion de Blender " crlf crlf)
-		(assert (recomendacion (mensaje "Se te recomienda la utilizacion de Blender ")))
-)(defrule opcion6-3	(lenguaje-programacion		(tipo modelado_3d)		(licencia GNU)		(so linux))	=> 	(printout t crlf "Se te recomienda la utilizacion de Blender " crlf crlf)		(assert (recomendacion (mensaje "Se te recomienda la utilizacion de Blender "))))
-
-
-
-
+(defrule opcion2-2-3-1	(peligro_reunion		(zona zona_cerrada)		(num_personas 11_20_personas)		(tipo_personas amigos)		(familia_cont si))	=> 	(printout t crlf "El peligro de contagio es de 0.48 (Medio)" crlf crlf)		(assert (probabilidad (mensaje "El peligro de contagio es de 0.48 (Medio)"))))(defrule opcion2-2-3-2	(peligro_reunion		(zona zona_cerrada)		(num_personas 11_20_personas)		(tipo_personas amigos)		(familia_cont no))	=> 	(printout t crlf "El peligro de contagio es de 0.33 (Medio)" crlf crlf)		(assert (probabilidad (mensaje "El peligro de contagio es de 0.33 (Medio)"))))(defrule opcion2-2-4-1	(peligro_reunion		(zona zona_cerrada)		(num_personas 11_20_personas)		(tipo_personas desconocidos)		(familia_cont si))	=> 	(printout t crlf "El peligro de contagio es de 0.51 (Alto)" crlf crlf)		(assert (probabilidad (mensaje "El peligro de contagio es de 0.51 (Alto)"))))(defrule opcion2-2-4-2	(peligro_reunion		(zona zona_cerrada)		(num_personas 11_20_personas)		(tipo_personas desconocidos)		(familia_cont no))	=> 	(printout t crlf "El peligro de contagio es de 0.36 (Media)" crlf crlf)		(assert (probabilidad (mensaje "El peligro de contagio es de 0.36 (Media)"))))(defrule opcion2-3-1-1	(peligro_reunion		(zona zona_cerrada)		(num_personas mas_20_personas)		(tipo_personas familiar)		(familia_cont si))	=> 	(printout t crlf "El peligro de contagio es de 0.6 (Alto)" crlf crlf)		(assert (probabilidad (mensaje "El peligro de contagio es de 0.6 (Alto)"))))(defrule opcion2-3-1-2	(peligro_reunion		(zona zona_cerrada)		(num_personas mas_20_personas)		(tipo_personas familiar)		(familia_cont no))	=> 	(printout t crlf "El peligro de contagio es de 0.45 (Media)" crlf crlf)		(assert (probabilidad (mensaje "El peligro de contagio es de 0.45 (Media)"))))(defrule opcion2-3-2-1	(peligro_reunion		(zona zona_cerrada)		(num_personas mas_20_personas)		(tipo_personas trabajo)		(familia_cont si))	=> 	(printout t crlf "El peligro de contagio es de 0.53 (Alto)" crlf crlf)		(assert (probabilidad (mensaje "El peligro de contagio es de 0.53 (Alto)"))))(defrule opcion2-3-2-2	(peligro_reunion		(zona zona_cerrada)		(num_personas mas_20_personas)		(tipo_personas trabajo)		(familia_cont no))	=> 	(printout t crlf "El peligro de contagio es de 0.38 (Media)" crlf crlf)		(assert (probabilidad (mensaje "El peligro de contagio es de 0.38 (Media)"))))(defrule opcion2-3-3-1	(peligro_reunion		(zona zona_cerrada)		(num_personas mas_20_personas)		(tipo_personas amigos)		(familia_cont si))	=> 	(printout t crlf "El peligro de contagio es de 0.58 (Alto)" crlf crlf)		(assert (probabilidad (mensaje "El peligro de contagio es de 0.58 (Alto)"))))(defrule opcion2-3-3-2	(peligro_reunion		(zona zona_cerrada)		(num_personas mas_20_personas)		(tipo_personas amigos)		(familia_cont no))	=> 	(printout t crlf "El peligro de contagio es de 0.43 (Media)" crlf crlf)		(assert (probabilidad (mensaje "El peligro de contagio es de 0.43 (Media)"))))(defrule opcion2-3-4-1	(peligro_reunion		(zona zona_cerrada)		(num_personas mas_20_personas)		(tipo_personas desconocidos)		(familia_cont si))	=> 	(printout t crlf "El peligro de contagio es de 0.61 (Alto)" crlf crlf)		(assert (probabilidad (mensaje "El peligro de contagio es de 0.61 (Alto)"))))(defrule opcion2-3-4-2	(peligro_reunion		(zona zona_cerrada)		(num_personas mas_20_personas)		(tipo_personas desconocidos)		(familia_cont no))	=> 	(printout t crlf "El peligro de contagio es de 0.46 (Media)" crlf crlf)		(assert (probabilidad (mensaje "El peligro de contagio es de 0.46 (Media)"))))
 
 
 

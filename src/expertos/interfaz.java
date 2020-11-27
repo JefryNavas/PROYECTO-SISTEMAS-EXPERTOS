@@ -61,19 +61,19 @@ public class interfaz extends javax.swing.JFrame {
         jcb_tipo.setBackground(new java.awt.Color(0, 0, 102));
         jcb_tipo.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jcb_tipo.setForeground(new java.awt.Color(255, 255, 255));
-        jcb_tipo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Software_matematico", "Arquitectura", "Sistema_experto", "Edicion_fotografica", "Edicion_vectorial", "Modelado_3d" }));
+        jcb_tipo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "zona_abierta", "zona_cerrada" }));
         getContentPane().add(jcb_tipo, new org.netbeans.lib.awtextra.AbsoluteConstraints(245, 54, 138, -1));
 
         jcb_licencia.setBackground(new java.awt.Color(0, 0, 153));
         jcb_licencia.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jcb_licencia.setForeground(new java.awt.Color(255, 255, 255));
-        jcb_licencia.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Privativo", "GNU" }));
+        jcb_licencia.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1_10_personas", "11_20_personas", "mas_20_personas" }));
         getContentPane().add(jcb_licencia, new org.netbeans.lib.awtextra.AbsoluteConstraints(245, 117, 138, -1));
 
         jcb_so.setBackground(new java.awt.Color(0, 0, 102));
         jcb_so.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jcb_so.setForeground(new java.awt.Color(255, 255, 255));
-        jcb_so.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Windows", "Linux" }));
+        jcb_so.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "familiar", "trabajo", "amigos", "desconocidos" }));
         getContentPane().add(jcb_so, new org.netbeans.lib.awtextra.AbsoluteConstraints(245, 171, 138, -1));
 
         jlabel_tipo.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
@@ -110,7 +110,7 @@ public class interfaz extends javax.swing.JFrame {
         getContentPane().add(jLabel_casos, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 230, 450, 40));
 
         jcb_casos.setBackground(new java.awt.Color(0, 0, 102));
-        jcb_casos.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jcb_casos.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "si", "no" }));
         getContentPane().add(jcb_casos, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 280, 140, 30));
 
         jlabel_fondo.setBackground(new java.awt.Color(255, 255, 255));
