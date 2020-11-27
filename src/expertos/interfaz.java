@@ -39,7 +39,7 @@ public class interfaz extends javax.swing.JFrame {
         jlabel_fondo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Recomendar Software");
+        setTitle("Posibilidad de contagio en una reunión");
         setBackground(new java.awt.Color(51, 51, 255));
         setForeground(new java.awt.Color(51, 51, 255));
         setIconImages(null);
