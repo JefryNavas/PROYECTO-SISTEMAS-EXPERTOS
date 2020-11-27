@@ -35,6 +35,7 @@ public class interfaz extends javax.swing.JFrame {
         jlabel_tipo = new javax.swing.JLabel();
         jlabel_recomendar = new javax.swing.JButton();
         jlabel_titulo = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
         jLabel_casos = new javax.swing.JLabel();
         jcb_casos = new javax.swing.JComboBox<>();
         jlabel_fondo = new javax.swing.JLabel();
@@ -48,16 +49,16 @@ public class interfaz extends javax.swing.JFrame {
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jlabel_numero.setBackground(new java.awt.Color(0, 0, 0));
-        jlabel_numero.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jlabel_numero.setFont(new java.awt.Font("Nirmala UI Semilight", 3, 18)); // NOI18N
         jlabel_numero.setForeground(new java.awt.Color(51, 0, 51));
         jlabel_numero.setText("Número de personas:");
-        getContentPane().add(jlabel_numero, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 110, 210, 30));
+        getContentPane().add(jlabel_numero, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 150, 210, 30));
 
         jlabel_lugar.setBackground(new java.awt.Color(0, 0, 102));
-        jlabel_lugar.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jlabel_lugar.setFont(new java.awt.Font("Nirmala UI Semilight", 3, 18)); // NOI18N
         jlabel_lugar.setForeground(new java.awt.Color(51, 0, 51));
         jlabel_lugar.setText("Tipo de Lugar :");
-        getContentPane().add(jlabel_lugar, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 60, 140, -1));
+        getContentPane().add(jlabel_lugar, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 100, 140, -1));
 
         jcb_zona.setBackground(new java.awt.Color(0, 0, 102));
         jcb_zona.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
@@ -68,26 +69,26 @@ public class interfaz extends javax.swing.JFrame {
                 jcb_zonaActionPerformed(evt);
             }
         });
-        getContentPane().add(jcb_zona, new org.netbeans.lib.awtextra.AbsoluteConstraints(245, 54, 160, -1));
+        getContentPane().add(jcb_zona, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 100, 160, -1));
 
         jcb_numper.setBackground(new java.awt.Color(0, 0, 153));
         jcb_numper.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jcb_numper.setForeground(new java.awt.Color(255, 255, 255));
         jcb_numper.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione una opción", "1 a 10 Personas", "11 a 20 Personas", "Mas 20 Personas" }));
-        getContentPane().add(jcb_numper, new org.netbeans.lib.awtextra.AbsoluteConstraints(245, 117, 160, -1));
+        getContentPane().add(jcb_numper, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 160, 160, -1));
 
         jcb_tipor.setBackground(new java.awt.Color(0, 0, 102));
         jcb_tipor.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jcb_tipor.setForeground(new java.awt.Color(255, 255, 255));
         jcb_tipor.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione una opción", "Familiar", "Laboral", "Amigos", "De Desconocidos" }));
-        getContentPane().add(jcb_tipor, new org.netbeans.lib.awtextra.AbsoluteConstraints(245, 171, 160, -1));
+        getContentPane().add(jcb_tipor, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 220, 160, -1));
 
-        jlabel_tipo.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jlabel_tipo.setFont(new java.awt.Font("Nirmala UI Semilight", 3, 18)); // NOI18N
         jlabel_tipo.setForeground(new java.awt.Color(51, 0, 51));
         jlabel_tipo.setText("Tipo de Reunión:");
-        getContentPane().add(jlabel_tipo, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 170, -1, -1));
+        getContentPane().add(jlabel_tipo, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 210, -1, -1));
 
-        jlabel_recomendar.setBackground(new java.awt.Color(0, 204, 255));
+        jlabel_recomendar.setBackground(new java.awt.Color(153, 255, 255));
         jlabel_recomendar.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jlabel_recomendar.setForeground(new java.awt.Color(51, 0, 51));
         jlabel_recomendar.setText("CONSULTAR");
@@ -96,29 +97,34 @@ public class interfaz extends javax.swing.JFrame {
                 jlabel_recomendarActionPerformed(evt);
             }
         });
-        getContentPane().add(jlabel_recomendar, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 300, -1, -1));
+        getContentPane().add(jlabel_recomendar, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 370, -1, -1));
 
         jlabel_titulo.setBackground(new java.awt.Color(255, 255, 255));
-        jlabel_titulo.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jlabel_titulo.setFont(new java.awt.Font("Times New Roman", 3, 22)); // NOI18N
         jlabel_titulo.setForeground(new java.awt.Color(255, 51, 51));
-        jlabel_titulo.setText("Probabilidad de Contagio en una reunión");
-        getContentPane().add(jlabel_titulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 10, 390, 40));
+        jlabel_titulo.setText("PROBABILIDAD DE CONTAGIO EN UNA REUNIÓN");
+        getContentPane().add(jlabel_titulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 10, 530, 40));
 
-        jLabel_casos.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Sitka Small", 3, 13)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(0, 102, 102));
+        jLabel1.setText("Llena este formulario y descubre tu porcentaje de contraer covid-19. ");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 60, 500, -1));
+
+        jLabel_casos.setFont(new java.awt.Font("Nirmala UI Semilight", 3, 16)); // NOI18N
         jLabel_casos.setForeground(new java.awt.Color(51, 0, 51));
         jLabel_casos.setText("El anfitrión tuvo casos de COVID recientes en su núcleo familiar: ");
-        getContentPane().add(jLabel_casos, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 220, 540, 40));
+        getContentPane().add(jLabel_casos, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 260, 550, 30));
 
         jcb_casos.setBackground(new java.awt.Color(0, 0, 102));
         jcb_casos.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jcb_casos.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione una opción", "Si", "No" }));
-        getContentPane().add(jcb_casos, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 300, 160, 30));
+        getContentPane().add(jcb_casos, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 300, 160, 30));
 
         jlabel_fondo.setBackground(new java.awt.Color(255, 255, 255));
         jlabel_fondo.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jlabel_fondo.setForeground(new java.awt.Color(255, 255, 255));
         jlabel_fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/covid2.jpg"))); // NOI18N
-        getContentPane().add(jlabel_fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 540, 440));
+        getContentPane().add(jlabel_fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 580, 460));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -203,6 +209,7 @@ public class interfaz extends javax.swing.JFrame {
   
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel_casos;
     private javax.swing.JComboBox<String> jcb_casos;
     private javax.swing.JComboBox<String> jcb_numper;
