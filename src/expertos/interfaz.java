@@ -61,7 +61,7 @@ public class interfaz extends javax.swing.JFrame {
         jcb_zona.setBackground(new java.awt.Color(0, 0, 102));
         jcb_zona.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jcb_zona.setForeground(new java.awt.Color(255, 255, 255));
-        jcb_zona.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione una opción", "Zona_Abierta", "Zona_Cerrada" }));
+        jcb_zona.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione una opción", "Zona Abierta", "Zona Cerrada" }));
         jcb_zona.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jcb_zonaActionPerformed(evt);
@@ -72,13 +72,13 @@ public class interfaz extends javax.swing.JFrame {
         jcb_numper.setBackground(new java.awt.Color(0, 0, 153));
         jcb_numper.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jcb_numper.setForeground(new java.awt.Color(255, 255, 255));
-        jcb_numper.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione una opción", "1_10_Personas", "11_20_Personas", "Mas_20_Personas" }));
+        jcb_numper.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione una opción", "1 a 10 Personas", "11 a 20 Personas", "Mas 20 Personas" }));
         getContentPane().add(jcb_numper, new org.netbeans.lib.awtextra.AbsoluteConstraints(245, 117, 160, -1));
 
         jcb_tipor.setBackground(new java.awt.Color(0, 0, 102));
         jcb_tipor.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jcb_tipor.setForeground(new java.awt.Color(255, 255, 255));
-        jcb_tipor.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione una opción", "Familiar", "Laboral", "Amigos", "De_Desconocidos" }));
+        jcb_tipor.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione una opción", "Familiar", "Laboral", "Amigos", "De Desconocidos" }));
         getContentPane().add(jcb_tipor, new org.netbeans.lib.awtextra.AbsoluteConstraints(245, 171, 160, -1));
 
         jlabel_tipo.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
@@ -133,10 +133,10 @@ public class interfaz extends javax.swing.JFrame {
         
         String zona,numper,tipor,casos,hecho = "";
         
-        zona=jcb_zona.getSelectedItem().toString().toLowerCase();
-        numper=jcb_numper.getSelectedItem().toString().toLowerCase();
-        tipor=jcb_tipor.getSelectedItem().toString().toLowerCase();
-        casos=jcb_casos.getSelectedItem().toString().toLowerCase();
+        zona=jcb_zona.getSelectedItem().toString().toLowerCase().replace(" ","_");
+        numper=jcb_numper.getSelectedItem().toString().toLowerCase().replace(" a ", "_").replace(" ","_");
+        tipor=jcb_tipor.getSelectedItem().toString().toLowerCase().replace(" ","_");
+        casos=jcb_casos.getSelectedItem().toString().toLowerCase().replace(" ","_");
         
         if((zona.equalsIgnoreCase("Seleccione una opción"))||(numper.equalsIgnoreCase("Seleccione una opción"))||(tipor.equalsIgnoreCase("Seleccione una opción"))||(casos.equalsIgnoreCase("Seleccione una opción"))){
             

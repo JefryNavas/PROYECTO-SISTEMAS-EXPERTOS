@@ -88,8 +88,8 @@
         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
           <StringArray count="3">
             <StringItem index="0" value="Seleccione una opci&#xf3;n"/>
-            <StringItem index="1" value="Zona_Abierta"/>
-            <StringItem index="2" value="Zona_Cerrada"/>
+            <StringItem index="1" value="Zona Abierta"/>
+            <StringItem index="2" value="Zona Cerrada"/>
           </StringArray>
         </Property>
       </Properties>
@@ -120,9 +120,9 @@
         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
           <StringArray count="4">
             <StringItem index="0" value="Seleccione una opci&#xf3;n"/>
-            <StringItem index="1" value="1_10_Personas"/>
-            <StringItem index="2" value="11_20_Personas"/>
-            <StringItem index="3" value="Mas_20_Personas"/>
+            <StringItem index="1" value="1 a 10 Personas"/>
+            <StringItem index="2" value="11 a 20 Personas"/>
+            <StringItem index="3" value="Mas 20 Personas"/>
           </StringArray>
         </Property>
       </Properties>
@@ -152,7 +152,7 @@
             <StringItem index="1" value="Familiar"/>
             <StringItem index="2" value="Laboral"/>
             <StringItem index="3" value="Amigos"/>
-            <StringItem index="4" value="De_Desconocidos"/>
+            <StringItem index="4" value="De Desconocidos"/>
           </StringArray>
         </Property>
       </Properties>
