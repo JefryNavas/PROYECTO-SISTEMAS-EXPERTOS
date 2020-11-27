@@ -73,7 +73,7 @@ public class interfaz extends javax.swing.JFrame {
         jcb_so.setBackground(new java.awt.Color(0, 0, 102));
         jcb_so.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jcb_so.setForeground(new java.awt.Color(255, 255, 255));
-        jcb_so.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione una opción", "familiar", "trabajo", "amigos", "desconocidos" }));
+        jcb_so.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione una opción", "familiar", "laboral", "amigos", "de_desconocidos" }));
         getContentPane().add(jcb_so, new org.netbeans.lib.awtextra.AbsoluteConstraints(245, 171, 160, -1));
 
         jlabel_tipo.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
