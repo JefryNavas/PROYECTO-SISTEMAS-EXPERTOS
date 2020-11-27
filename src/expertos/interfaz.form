@@ -86,9 +86,10 @@
           <Color blue="ff" green="ff" red="ff" type="rgb"/>
         </Property>
         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-          <StringArray count="2">
-            <StringItem index="0" value="zona_abierta"/>
-            <StringItem index="1" value="zona_cerrada"/>
+          <StringArray count="3">
+            <StringItem index="0" value="Seleccione una opci&#xf3;n"/>
+            <StringItem index="1" value="zona_abierta"/>
+            <StringItem index="2" value="zona_cerrada"/>
           </StringArray>
         </Property>
       </Properties>
@@ -98,7 +99,7 @@
       </AuxValues>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="245" y="54" width="138" height="-1"/>
+          <AbsoluteConstraints x="245" y="54" width="160" height="-1"/>
         </Constraint>
       </Constraints>
     </Component>
@@ -114,10 +115,11 @@
           <Color blue="ff" green="ff" red="ff" type="rgb"/>
         </Property>
         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-          <StringArray count="3">
-            <StringItem index="0" value="1_10_personas"/>
-            <StringItem index="1" value="11_20_personas"/>
-            <StringItem index="2" value="mas_20_personas"/>
+          <StringArray count="4">
+            <StringItem index="0" value="Seleccione una opci&#xf3;n"/>
+            <StringItem index="1" value="1_10_personas"/>
+            <StringItem index="2" value="11_20_personas"/>
+            <StringItem index="3" value="mas_20_personas"/>
           </StringArray>
         </Property>
       </Properties>
@@ -126,7 +128,7 @@
       </AuxValues>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="245" y="117" width="138" height="-1"/>
+          <AbsoluteConstraints x="245" y="117" width="160" height="-1"/>
         </Constraint>
       </Constraints>
     </Component>
@@ -142,11 +144,12 @@
           <Color blue="ff" green="ff" red="ff" type="rgb"/>
         </Property>
         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-          <StringArray count="4">
-            <StringItem index="0" value="familiar"/>
-            <StringItem index="1" value="trabajo"/>
-            <StringItem index="2" value="amigos"/>
-            <StringItem index="3" value="desconocidos"/>
+          <StringArray count="5">
+            <StringItem index="0" value="Seleccione una opci&#xf3;n"/>
+            <StringItem index="1" value="familiar"/>
+            <StringItem index="2" value="trabajo"/>
+            <StringItem index="3" value="amigos"/>
+            <StringItem index="4" value="desconocidos"/>
           </StringArray>
         </Property>
       </Properties>
@@ -155,7 +158,7 @@
       </AuxValues>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="245" y="171" width="138" height="-1"/>
+          <AbsoluteConstraints x="245" y="171" width="160" height="-1"/>
         </Constraint>
       </Constraints>
     </Component>
@@ -261,9 +264,10 @@
           <Color blue="66" green="0" red="0" type="rgb"/>
         </Property>
         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-          <StringArray count="2">
-            <StringItem index="0" value="si"/>
-            <StringItem index="1" value="no"/>
+          <StringArray count="3">
+            <StringItem index="0" value="Seleccione una opci&#xf3;n"/>
+            <StringItem index="1" value="si"/>
+            <StringItem index="2" value="no"/>
           </StringArray>
         </Property>
       </Properties>
