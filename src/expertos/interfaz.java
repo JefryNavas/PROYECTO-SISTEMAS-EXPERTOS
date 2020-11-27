@@ -104,8 +104,8 @@ public class interfaz extends javax.swing.JFrame {
         jlabel_fondo.setBackground(new java.awt.Color(255, 255, 255));
         jlabel_fondo.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jlabel_fondo.setForeground(new java.awt.Color(255, 255, 255));
-        jlabel_fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/fondo.jpg"))); // NOI18N
-        getContentPane().add(jlabel_fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, -20, 530, 410));
+        jlabel_fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/distanciamiento.jpg"))); // NOI18N
+        getContentPane().add(jlabel_fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 530, 410));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
