@@ -61,19 +61,24 @@ public class interfaz extends javax.swing.JFrame {
         jcb_zona.setBackground(new java.awt.Color(0, 0, 102));
         jcb_zona.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jcb_zona.setForeground(new java.awt.Color(255, 255, 255));
-        jcb_zona.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione una opción", "zona_abierta", "zona_cerrada" }));
+        jcb_zona.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione una opción", "Zona_Abierta", "Zona_Cerrada" }));
+        jcb_zona.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jcb_zonaActionPerformed(evt);
+            }
+        });
         getContentPane().add(jcb_zona, new org.netbeans.lib.awtextra.AbsoluteConstraints(245, 54, 160, -1));
 
         jcb_numper.setBackground(new java.awt.Color(0, 0, 153));
         jcb_numper.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jcb_numper.setForeground(new java.awt.Color(255, 255, 255));
-        jcb_numper.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione una opción", "1_10_personas", "11_20_personas", "mas_20_personas" }));
+        jcb_numper.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione una opción", "1_10_Personas", "11_20_Personas", "mas_20_Personas" }));
         getContentPane().add(jcb_numper, new org.netbeans.lib.awtextra.AbsoluteConstraints(245, 117, 160, -1));
 
         jcb_tipor.setBackground(new java.awt.Color(0, 0, 102));
         jcb_tipor.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jcb_tipor.setForeground(new java.awt.Color(255, 255, 255));
-        jcb_tipor.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione una opción", "familiar", "laboral", "amigos", "de_desconocidos" }));
+        jcb_tipor.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione una opción", "Familiar", "Laboral", "Amigos", "De_Desconocidos" }));
         getContentPane().add(jcb_tipor, new org.netbeans.lib.awtextra.AbsoluteConstraints(245, 171, 160, -1));
 
         jlabel_tipo.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
@@ -111,7 +116,7 @@ public class interfaz extends javax.swing.JFrame {
 
         jcb_casos.setBackground(new java.awt.Color(0, 0, 102));
         jcb_casos.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        jcb_casos.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione una opción", "si", "no" }));
+        jcb_casos.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione una opción", "Si", "No" }));
         getContentPane().add(jcb_casos, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 280, 160, 30));
 
         jlabel_fondo.setBackground(new java.awt.Color(255, 255, 255));
@@ -156,6 +161,10 @@ public class interfaz extends javax.swing.JFrame {
             
         }
     }//GEN-LAST:event_jlabel_recomendarActionPerformed
+
+    private void jcb_zonaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jcb_zonaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jcb_zonaActionPerformed
 
     
     public static void main(String args[]) {

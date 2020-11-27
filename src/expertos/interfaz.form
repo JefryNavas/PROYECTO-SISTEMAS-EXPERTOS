@@ -88,11 +88,14 @@
         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
           <StringArray count="3">
             <StringItem index="0" value="Seleccione una opci&#xf3;n"/>
-            <StringItem index="1" value="zona_abierta"/>
-            <StringItem index="2" value="zona_cerrada"/>
+            <StringItem index="1" value="Zona_Abierta"/>
+            <StringItem index="2" value="Zona_Cerrada"/>
           </StringArray>
         </Property>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jcb_zonaActionPerformed"/>
+      </Events>
       <AuxValues>
         <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
         <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
@@ -117,9 +120,9 @@
         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
           <StringArray count="4">
             <StringItem index="0" value="Seleccione una opci&#xf3;n"/>
-            <StringItem index="1" value="1_10_personas"/>
-            <StringItem index="2" value="11_20_personas"/>
-            <StringItem index="3" value="mas_20_personas"/>
+            <StringItem index="1" value="1_10_Personas"/>
+            <StringItem index="2" value="11_20_Personas"/>
+            <StringItem index="3" value="mas_20_Personas"/>
           </StringArray>
         </Property>
       </Properties>
@@ -146,10 +149,10 @@
         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
           <StringArray count="5">
             <StringItem index="0" value="Seleccione una opci&#xf3;n"/>
-            <StringItem index="1" value="familiar"/>
-            <StringItem index="2" value="laboral"/>
-            <StringItem index="3" value="amigos"/>
-            <StringItem index="4" value="de_desconocidos"/>
+            <StringItem index="1" value="Familiar"/>
+            <StringItem index="2" value="Laboral"/>
+            <StringItem index="3" value="Amigos"/>
+            <StringItem index="4" value="De_Desconocidos"/>
           </StringArray>
         </Property>
       </Properties>
@@ -269,8 +272,8 @@
         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
           <StringArray count="3">
             <StringItem index="0" value="Seleccione una opci&#xf3;n"/>
-            <StringItem index="1" value="si"/>
-            <StringItem index="2" value="no"/>
+            <StringItem index="1" value="Si"/>
+            <StringItem index="2" value="No"/>
           </StringArray>
         </Property>
       </Properties>
