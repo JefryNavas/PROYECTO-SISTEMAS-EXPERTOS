@@ -104,20 +104,21 @@ public class interfaz extends javax.swing.JFrame {
         jl_recomendacion.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         getContentPane().add(jl_recomendacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 460, 390, 29));
 
-        jLabel_casos.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel_casos.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
         jLabel_casos.setForeground(new java.awt.Color(51, 0, 51));
         jLabel_casos.setText("El anfitrión tuvo casos de COVID recientes en su núcleo familiar: ");
-        getContentPane().add(jLabel_casos, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 230, 450, 40));
+        getContentPane().add(jLabel_casos, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 220, 540, 40));
 
         jcb_casos.setBackground(new java.awt.Color(0, 0, 102));
+        jcb_casos.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jcb_casos.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione una opción", "si", "no" }));
-        getContentPane().add(jcb_casos, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 280, 140, 30));
+        getContentPane().add(jcb_casos, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 280, 160, 30));
 
         jlabel_fondo.setBackground(new java.awt.Color(255, 255, 255));
         jlabel_fondo.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jlabel_fondo.setForeground(new java.awt.Color(255, 255, 255));
         jlabel_fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/distanciamiento.jpg"))); // NOI18N
-        getContentPane().add(jlabel_fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -30, 530, 570));
+        getContentPane().add(jlabel_fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -30, 540, 570));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
