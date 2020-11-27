@@ -1,12 +1,12 @@
 
 package expertos;
 
-
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import net.sf.clipsrules.jni.Environment;
 import net.sf.clipsrules.jni.FactAddressValue;
 import net.sf.clipsrules.jni.MultifieldValue;
+
 
 public class interfaz extends javax.swing.JFrame {
     
@@ -34,7 +34,6 @@ public class interfaz extends javax.swing.JFrame {
         jlabel_tipo = new javax.swing.JLabel();
         jlabel_recomendar = new javax.swing.JButton();
         jlabel_titulo = new javax.swing.JLabel();
-        jl_recomendacion = new javax.swing.JLabel();
         jLabel_casos = new javax.swing.JLabel();
         jcb_casos = new javax.swing.JComboBox<>();
         jlabel_fondo = new javax.swing.JLabel();
@@ -96,19 +95,13 @@ public class interfaz extends javax.swing.JFrame {
                 jlabel_recomendarActionPerformed(evt);
             }
         });
-        getContentPane().add(jlabel_recomendar, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 410, -1, -1));
+        getContentPane().add(jlabel_recomendar, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 370, -1, -1));
 
         jlabel_titulo.setBackground(new java.awt.Color(255, 255, 255));
         jlabel_titulo.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jlabel_titulo.setForeground(new java.awt.Color(255, 51, 51));
         jlabel_titulo.setText("Probabilidad de Contagio en una reunión");
         getContentPane().add(jlabel_titulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 10, 390, 40));
-
-        jl_recomendacion.setBackground(new java.awt.Color(51, 51, 255));
-        jl_recomendacion.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jl_recomendacion.setForeground(new java.awt.Color(255, 255, 255));
-        jl_recomendacion.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        getContentPane().add(jl_recomendacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 460, 390, 29));
 
         jLabel_casos.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
         jLabel_casos.setForeground(new java.awt.Color(51, 0, 51));
@@ -124,7 +117,7 @@ public class interfaz extends javax.swing.JFrame {
         jlabel_fondo.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jlabel_fondo.setForeground(new java.awt.Color(255, 255, 255));
         jlabel_fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/distanciamiento.jpg"))); // NOI18N
-        getContentPane().add(jlabel_fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -30, 540, 570));
+        getContentPane().add(jlabel_fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 540, 440));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -160,7 +153,8 @@ public class interfaz extends javax.swing.JFrame {
         
         try {
             String msj = fv.getFactSlot("mensaje").toString();
-            jl_recomendacion.setText(msj);
+            JOptionPane.showMessageDialog(null, msj);
+            
             clips.reset();
         } catch (Exception e) {
             
@@ -209,7 +203,6 @@ public class interfaz extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> jcb_numper;
     private javax.swing.JComboBox<String> jcb_tipor;
     public javax.swing.JComboBox<String> jcb_zona;
-    private javax.swing.JLabel jl_recomendacion;
     private javax.swing.JLabel jlabel_fondo;
     private javax.swing.JLabel jlabel_lugar;
     private javax.swing.JLabel jlabel_numero;
