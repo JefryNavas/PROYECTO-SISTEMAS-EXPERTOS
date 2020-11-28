@@ -106,9 +106,9 @@ public class interfaz extends javax.swing.JFrame {
         getContentPane().add(jlabel_titulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 10, 530, 40));
 
         jLabel1.setFont(new java.awt.Font("Sitka Small", 3, 13)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(0, 102, 102));
+        jLabel1.setForeground(new java.awt.Color(153, 0, 102));
         jLabel1.setText("Llena este formulario y descubre tu porcentaje de contraer covid-19. ");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 60, 500, -1));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 60, 500, -1));
 
         jLabel_casos.setFont(new java.awt.Font("Nirmala UI Semilight", 3, 16)); // NOI18N
         jLabel_casos.setForeground(new java.awt.Color(51, 0, 51));
